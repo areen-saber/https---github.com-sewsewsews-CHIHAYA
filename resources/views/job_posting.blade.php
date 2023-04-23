@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="../main.css">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -129,10 +129,11 @@
                 Fill below
             </p>
            
-                    <form action="/action_page.php">
-                      <label for="Job Type">Job Type:</label>
+                    <form action="add" method="POST">
+                        @csrf
+                      <label for="Job Type">Job Type: *</label>
                       <br>
-                      <select name="job_type" id="size">
+                      <select name="job_type" id="size" required>
                           
                           <optgroup>
                              
@@ -144,9 +145,9 @@
                       </select>
                       <br><br>
 
-                      <label for="Scope Of Work">Scope Of Work:</label>
+                      <label for="Scope Of Work">Scope Of Work: *</label>
                       <br>
-                      <select name="scope" id="scope">
+                      <select name="scope" id="scope" required>
                           
                           <optgroup>
                              
@@ -159,9 +160,9 @@
                       </select>
                       <br><br>
 
-                      <label for="Language">Language:</label>
+                      <label for="Language">Language: *</label>
                       <br>
-                      <select name="language" id="language">
+                      <select name="language" id="language" required>
                           
                           <optgroup>
                              
@@ -175,9 +176,9 @@
                       <br><br>
 
 
-                      <label for=" gender">gender:</label>
+                      <label for=" gender">gender: *</label>
                             <br>
-                            <select name="gender" id="gender">
+                            <select name="gender" id="gender" required>
                               <optgroup label="gender">
                                 <option value="man">man</option>
                                 <option value="woman">woman</option>
@@ -187,15 +188,15 @@
                             </select>
                             <br><br>
 
-                            <label for="Date of Post Expiration">Date of Post Expiration:</label>
+                            <label for="Date of Post Expiration">Date of Post Expiration: *</label>
                             <br>
-                            <input type="date" id="expiration_date" name="expiration_date">
+                            <input type="datetime-local" id="expiration_date" name="expiration_date" required>
 
                             <br><br>
-                            <label for=" city">City:</label>
+                            <label for=" city">City: *</label>
                             <br>
                             
-                            <select name="city" id="city">
+                            <select name="city" id="city" required>
                               <optgroup label="city">
                                 <option value="Erbil">Erbil</option>
                                 <option value="Sulemaniyah">Sulemaniyah</option>
@@ -206,55 +207,55 @@
                             <br><br>
 
 
-                            <label for="Job Title "> Job Title:</label>
+                            <label for="Job Title "> Job Title: *</label>
                             <br>
-                            <input type="text" id="job_title" name="job_title "><br><br>
+                            <input type="text" id="job_title" name="job_title" required><br><br>
 
-                            <label for="Email "> Email:</label>
+                            <label for="Email "> Email: *</label>
                             <br>
-                            <input type="email" id="email" name="email "><br><br>
+                            <input type="email" id="email" name="Email" required><br><br>
                             
 
-                            <label for="Phone Number "> Phone Number:</label>
+                            <label for="Phone Number "> Phone Number: *</label>
                             <br>
-                            <input type="text" id="phone_number" name="phone_number "><br><br>
+                            <input type="tel" id="phone_number" name="phone_num" required><br><br>
 
                             <label for="Salary "> Salary:</label>
                             <br>
-                            <input type="number" id="salary" name="salary "><br><br>
+                            <input type="number" id="salary" name="salary" required><br><br>
                             
     
-                            <label for="Company Name"> Company Name:</label>
+                            <label for="Company Name"> Company Name: *</label>
                             <br>
-                            <input type="text" id="company_name" name="company_name"><br><br>
+                            <input type="text" id="company_name" name="company_name" required><br><br>
 
-                            <label for="Description">Description:</label>
+                            <label for="Description">Description: *</label>
                             <br>
-                            <input type="text" id="description" name="description"><br><br>
+                            <input type="text" id="description" name="description" required><br><br>
 
-                            <label for="Number of Positions">Number Of Positions:</label>
+                            <label for="Number of Positions">Number Of Positions: *</label>
                             <br>
-                            <input type="text" id="num_possitions" name="num_possitions"><br><br>
+                            <input type="text" id="num_possitions" name="num_possitions" required><br><br>
 
                             
                             <br>
 
                             
                             <label for="Job Requirements">
-                                Job Requirements: </label><br>
+                                Job Requirements: *</label><br>
                             
-                            <input type="file" accept="application/pdf" id="job_requirements" name="job_requirements">
+                            <input type="file" accept="application/pdf" id="job_requirements" name="job_requirements" required>
                             
                             <div class="mt-4">
                                 <button type="submit"
-                                    class="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">Submit</button>
+                                    class="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium" required>Submit</button>
                             </div>
                     </form>
                        
-                </div>
+                
                
-                </p>
-              
+        </div>
+    </div>       
 
     <!-- footer -->
     <footer class="bg-white pt-16 pb-12 border-t border-gray-100">
